@@ -6,16 +6,10 @@ function setUserName() {
   if (!myName) {
     setUserName();
   } else {
-    localStorage.setItem("name", myName);
     myHeading.textContent = `Mozilla is cool, ${myName}`;
   }
 }
 
 myButton.onclick = () => {
-  if (!localStorage.getItem("name")) {
-    setUserName();
-  } else {
-    const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is cool, ${storedName}`;
-  }
+  setUserName();
 };
